@@ -49,8 +49,15 @@ advent-2025/
 
 ## Progress
 
-| Day | Part 1 | Part 2 |
-|-----|--------|--------|
-| 1   | ⭐     | ⭐     |
-| 2   |        |        |
-| ... |        |        |
+| Day | Part 1 | Part 2 | Notes |
+|-----|--------|--------|-------|
+| 1   | ⭐     | ⭐     | Secret Entrance - Safe dial rotations |
+| 2   | ⭐     | ⭐     | Gift Shop - Invalid product IDs |
+| 3   | ⭐     | ⭐     | Lobby - Battery joltage optimization |
+| 4   | ⭐     | ⭐     | Printing Department - Paper roll access |
+| 5   | ⭐     | ⭐     | Cafeteria - Fresh ingredient ID ranges |
+| 6   | ⭐     | ⭐     | Trash Compactor - Cephalopod math |
+| 7   |        |        | |
+| ... |        |        | |
+
+**Total Stars: 12 ⭐**
