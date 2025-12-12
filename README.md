@@ -57,7 +57,8 @@ advent-2025/
 | 4   | ⭐     | ⭐     | Printing Department - Paper roll access |
 | 5   | ⭐     | ⭐     | Cafeteria - Fresh ingredient ID ranges |
 | 6   | ⭐     | ⭐     | Trash Compactor - Cephalopod math |
-| 7   |        |        | |
+| 7   | ⭐     | ⭐     | Laboratories - Tachyon beam splitting |
+| 8   | ⭐     | ⭐     | Playground - Junction box circuits (Union-Find) |
 | ... |        |        | |
 
-**Total Stars: 12 ⭐**
+**Total Stars: 16 ⭐**
