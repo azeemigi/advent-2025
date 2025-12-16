@@ -1,3 +1,6 @@
+# Advent of Code inputs (do not redistribute per AoC policy)
+inputs/*.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
