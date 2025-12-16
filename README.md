@@ -60,6 +60,7 @@ advent-2025/
 | 7   | ⭐     | ⭐     | Laboratories - Tachyon beam splitting |
 | 8   | ⭐     | ⭐     | Playground - Junction box circuits (Union-Find) |
 | 9   | ⭐     | ⭐     | Movie Theater - Largest rectangle (coordinate compression) |
+| 10  | ⭐     | ⭐     | Factory - Lights Out (GF(2)) & Joltage (ILP) |
 | ... |        |        | |
 
-**Total Stars: 18 ⭐**
+**Total Stars: 20 ⭐**
