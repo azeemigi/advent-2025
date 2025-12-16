@@ -29,7 +29,9 @@ python setup_day.py <day_number>
 
 This creates:
 - `solutions/day_XX.py` - Solution template
-- `inputs/day_XX.txt` - Empty input file (manually paste your input)
+- `inputs/day_XX.txt` - Empty input file (you must manually add your own puzzle input)
+
+**Note**: Per [Advent of Code's copyright policy](https://adventofcode.com/about), puzzle inputs are not included in this repository. You must obtain your own inputs from the [Advent of Code website](https://adventofcode.com/2025).
 
 ### Run a solution:
 ```bash
