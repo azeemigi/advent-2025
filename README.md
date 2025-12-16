@@ -59,6 +59,7 @@ advent-2025/
 | 6   | ⭐     | ⭐     | Trash Compactor - Cephalopod math |
 | 7   | ⭐     | ⭐     | Laboratories - Tachyon beam splitting |
 | 8   | ⭐     | ⭐     | Playground - Junction box circuits (Union-Find) |
+| 9   | ⭐     | ⭐     | Movie Theater - Largest rectangle (coordinate compression) |
 | ... |        |        | |
 
-**Total Stars: 16 ⭐**
+**Total Stars: 18 ⭐**
