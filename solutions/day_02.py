@@ -12,7 +12,7 @@ from pathlib import Path
 # Add parent directory to path to import utils
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from utils import read_input, read_lines
+from utils import read_input
 
 
 def parse_input(data: str):
@@ -28,7 +28,7 @@ def parse_input(data: str):
 
 def is_invalid_id(num: int) -> bool:
     """Check if a number is invalid (a sequence repeated exactly twice).
-    
+
     Examples:
     - 11 -> "1" repeated twice = invalid
     - 6464 -> "64" repeated twice = invalid
@@ -37,34 +37,34 @@ def is_invalid_id(num: int) -> bool:
     """
     s = str(num)
     length = len(s)
-    
+
     # Must be even length to split in half
     if length % 2 != 0:
         return False
-    
+
     # Check if first half equals second half
     half = length // 2
     first_half = s[:half]
     second_half = s[half:]
-    
+
     return first_half == second_half
 
 
 def part1(ranges):
     """Find and sum all invalid IDs in the given ranges."""
     total = 0
-    
+
     for start, end in ranges:
         for num in range(start, end + 1):
             if is_invalid_id(num):
                 total += num
-    
+
     return total
 
 
 def is_invalid_id_part2(num: int) -> bool:
     """Check if a number is invalid (a sequence repeated at least twice).
-    
+
     Examples:
     - 11 -> "1" repeated 2 times = invalid
     - 111 -> "1" repeated 3 times = invalid
@@ -74,41 +74,41 @@ def is_invalid_id_part2(num: int) -> bool:
     """
     s = str(num)
     length = len(s)
-    
+
     # Try all possible pattern lengths from 1 to length//2
     for pattern_len in range(1, length // 2 + 1):
         # Check if the string is composed of this pattern repeated
         pattern = s[:pattern_len]
-        
+
         # Check if the entire string can be made by repeating this pattern
         if length % pattern_len == 0:
             repetitions = length // pattern_len
             if repetitions >= 2 and pattern * repetitions == s:
                 return True
-    
+
     return False
 
 
 def part2(ranges):
     """Find and sum all invalid IDs using the new rules (repeated at least twice)."""
     total = 0
-    
+
     for start, end in ranges:
         for num in range(start, end + 1):
             if is_invalid_id_part2(num):
                 total += num
-    
+
     return total
 
 
 def main():
     # Get day number from filename
     day = int(Path(__file__).stem.split('_')[1])
-    
+
     # Read and parse input
     raw_input = read_input(day)
     data = parse_input(raw_input)
-    
+
     # Solve and print results
     print(f"Part 1: {part1(data)}")
     print(f"Part 2: {part2(data)}")

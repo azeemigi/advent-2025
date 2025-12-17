@@ -1,15 +1,15 @@
 """Utility functions for Advent of Code solutions."""
 
 from pathlib import Path
-from typing import List, Tuple
+from typing import List
 
 
 def read_input(day: int) -> str:
     """Read the input file for a given day.
-    
+
     Args:
         day: The day number (1-25)
-        
+
     Returns:
         The contents of the input file as a string
     """
@@ -20,11 +20,11 @@ def read_input(day: int) -> str:
 
 def read_lines(day: int, strip: bool = True) -> List[str]:
     """Read input file as a list of lines.
-    
+
     Args:
         day: The day number (1-25)
         strip: Whether to strip whitespace from each line
-        
+
     Returns:
         List of lines from the input file
     """
@@ -35,10 +35,10 @@ def read_lines(day: int, strip: bool = True) -> List[str]:
 
 def read_blocks(day: int) -> List[str]:
     """Read input file as blocks separated by blank lines.
-    
+
     Args:
         day: The day number (1-25)
-        
+
     Returns:
         List of text blocks
     """
@@ -48,10 +48,10 @@ def read_blocks(day: int) -> List[str]:
 
 def read_grid(day: int) -> List[List[str]]:
     """Read input file as a 2D grid of characters.
-    
+
     Args:
         day: The day number (1-25)
-        
+
     Returns:
         2D list representing the grid
     """
@@ -61,10 +61,10 @@ def read_grid(day: int) -> List[List[str]]:
 
 def read_int_grid(day: int) -> List[List[int]]:
     """Read input file as a 2D grid of integers.
-    
+
     Args:
         day: The day number (1-25)
-        
+
     Returns:
         2D list of integers
     """

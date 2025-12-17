@@ -1,6 +1,6 @@
 """Grid utility functions for Advent of Code."""
 
-from typing import List, Tuple, Set, Iterator
+from typing import List, Tuple
 
 
 # Common direction vectors
@@ -20,12 +20,12 @@ DIRECTION_NAMES = {
 
 def in_bounds(grid: List[List], row: int, col: int) -> bool:
     """Check if coordinates are within grid bounds.
-    
+
     Args:
         grid: The grid to check
         row: Row index
         col: Column index
-        
+
     Returns:
         True if coordinates are valid, False otherwise
     """
@@ -34,13 +34,13 @@ def in_bounds(grid: List[List], row: int, col: int) -> bool:
 
 def get_neighbors_4(row: int, col: int, max_row: int, max_col: int) -> List[Tuple[int, int]]:
     """Get 4-directional neighbors (no diagonals).
-    
+
     Args:
         row: Current row
         col: Current column
         max_row: Maximum row index (exclusive)
         max_col: Maximum column index (exclusive)
-        
+
     Returns:
         List of valid neighbor coordinates
     """
@@ -54,13 +54,13 @@ def get_neighbors_4(row: int, col: int, max_row: int, max_col: int) -> List[Tupl
 
 def get_neighbors_8(row: int, col: int, max_row: int, max_col: int) -> List[Tuple[int, int]]:
     """Get 8-directional neighbors (including diagonals).
-    
+
     Args:
         row: Current row
         col: Current column
         max_row: Maximum row index (exclusive)
         max_col: Maximum column index (exclusive)
-        
+
     Returns:
         List of valid neighbor coordinates
     """
@@ -74,11 +74,11 @@ def get_neighbors_8(row: int, col: int, max_row: int, max_col: int) -> List[Tupl
 
 def find_in_grid(grid: List[List[str]], target: str) -> List[Tuple[int, int]]:
     """Find all positions of a character in the grid.
-    
+
     Args:
         grid: The grid to search
         target: The character to find
-        
+
     Returns:
         List of (row, col) positions where target appears
     """
@@ -92,7 +92,7 @@ def find_in_grid(grid: List[List[str]], target: str) -> List[Tuple[int, int]]:
 
 def print_grid(grid: List[List]) -> None:
     """Print a grid in a readable format.
-    
+
     Args:
         grid: The grid to print
     """

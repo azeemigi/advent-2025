@@ -1,0 +1,8 @@
+[flake8]
+max-line-length = 100
+# E402: module level import not at top of file (intentional for path setup)
+ignore = E402
+exclude =
+    venv/
+    .git/
+    __pycache__/

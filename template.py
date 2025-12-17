@@ -9,7 +9,7 @@ from pathlib import Path
 # Add parent directory to path to import utils
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from utils import read_input, read_lines
+from utils import read_input
 
 
 def parse_input(data: str):
@@ -34,11 +34,11 @@ def part2(data):
 def main():
     # Get day number from filename
     day = int(Path(__file__).stem.split('_')[1])
-    
+
     # Read and parse input
     raw_input = read_input(day)
     data = parse_input(raw_input)
-    
+
     # Solve and print results
     print(f"Part 1: {part1(data)}")
     print(f"Part 2: {part2(data)}")
