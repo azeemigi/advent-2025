@@ -1,5 +1,3 @@
-/.x  fghjjkl;;'
-
 # Advent of Code 2025 - Solutions
 
 My Python solutions for [Advent of Code 2025](https://adventofcode.com/2025).
