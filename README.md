@@ -15,6 +15,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
+pip install flake8 autopep8 autoflake  # Optional: for linting and formatting
 ```
 
 3. (Optional) Add your session cookie to `.env`:
@@ -35,21 +36,47 @@ This creates:
 
 **Note**: Per [Advent of Code's copyright policy](https://adventofcode.com/about), puzzle inputs are not included in this repository. You must obtain your own inputs from the [Advent of Code website](https://adventofcode.com/2025).
 
-### Run a solution:
+### Run a single day's solution:
 ```bash
 python solutions/day_01.py
+```
+
+### Run all solutions:
+```bash
+python run_all.py
+```
+
+This will execute all implemented solutions and display results in a formatted table with execution times.
+
+### Check code quality:
+```bash
+flake8 solutions/ utils/
 ```
 
 ## Project Structure
 
 ```
 advent-2025/
-├── solutions/       # Daily solution files
-├── inputs/          # Puzzle inputs
+├── solutions/       # Daily solution files (day_01.py, day_02.py, ...)
+├── inputs/          # Puzzle inputs (not tracked in git)
 ├── utils/           # Helper utilities
+│   ├── __init__.py  # File I/O utilities (read_input, read_lines, read_blocks, read_grid)
+│   ├── grid.py      # Grid utilities (DIRECTIONS, get_neighbors, find_in_grid)
+│   └── algorithms.py # Common algorithms (BFS, Dijkstra, binary_search)
 ├── setup_day.py     # Script to generate new day files
+├── run_all.py       # Execute all solutions at once
+├── template.py      # Template for new solutions
+├── .flake8          # Linting configuration
 └── requirements.txt # Python dependencies
 ```
+
+## Utilities
+
+The `utils/` package provides helpful functions for common Advent of Code tasks:
+
+- **File I/O**: `read_input()`, `read_lines()`, `read_blocks()`, `read_grid()`
+- **Grid Navigation**: `DIRECTIONS_4`, `DIRECTIONS_8`, `get_neighbors()`, `find_in_grid()`
+- **Algorithms**: `bfs()`, `dijkstra()`, `binary_search()`
 
 ## Progress
 
