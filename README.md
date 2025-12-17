@@ -1,6 +1,10 @@
-# Advent of Code 2025
+/.x  fghjjkl;;'
 
-Python solutions for [Advent of Code 2025](https://adventofcode.com/2025).
+# Advent of Code 2025 - Solutions
+
+My Python solutions for [Advent of Code 2025](https://adventofcode.com/2025).
+
+> **Disclaimer**: This repository contains personal solutions to Advent of Code puzzles. Advent of Code is a registered trademark of Advent of Code. This project is not affiliated with, endorsed by, or sponsored by Advent of Code.
 
 ## Setup
 
@@ -66,3 +70,8 @@ advent-2025/
 | ... |        |        | |
 
 **Total Stars: 20 ⭐**
+## Legal
+
+Advent of Code® is a registered trademark in the United States. This repository is not affiliated with, endorsed by, or sponsored by Advent of Code. All puzzle content, concepts, and design elements are © 2015-2025 Advent of Code, all rights reserved. 
+
+This repository contains only personal solution implementations, which are not claimed by Advent of Code per their [legal statement](https://adventofcode.com/about).
