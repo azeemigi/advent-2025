@@ -1,0 +1,81 @@
+{{- /* Determine auth provider type - prefer global, fallback to local, default to keycloak */ -}}
+{{- $authProviderType := .Values.authProvider.type | default "keycloak" }}
+{{- if .Values.global.authProvider }}
+  {{- $authProviderType = .Values.global.authProvider.type | default $authProviderType }}
+{{- end }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.app.name }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    app.kubernetes.io/name: {{ .Values.app.name }}
+    app.kubernetes.io/component: {{ .Values.app.name }}
+spec:
+  replicas: {{ .Values.app.replicas }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ .Values.app.name }}
+      app.kubernetes.io/component: {{ .Values.app.name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ .Values.app.name }}
+        app.kubernetes.io/component: {{ .Values.app.name }}
+    spec:
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: {{ .Values.app.name }}
+          image: "{{ .Values.global.image.repository }}:{{ .Values.global.image.tag }}"
+          imagePullPolicy: {{ .Values.global.image.pullPolicy }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+          ports:
+            - containerPort: {{ .Values.service.port }}
+              name: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          envFrom:
+            - secretRef:
+                name: {{ .Values.app.envSecretName }}
+            {{- if eq $authProviderType "keycloak" }}
+            - secretRef:
+                name: keycloak-client-secret
+            {{- end }}
+            - secretRef:
+                name: mongo-credentials
+            {{- if .Values.global.sharedSecretName }}
+            - secretRef:
+                name: {{ .Values.global.sharedSecretName }}
+            {{- end }}
+            {{- if .Values.global.oauthProviderSecretName }}
+            - secretRef:
+                name: {{ .Values.global.oauthProviderSecretName }}
+            {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8888
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8888
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
